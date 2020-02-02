@@ -43,6 +43,7 @@ module.exports = {
     'no-useless-constructor': 0,
     'no-unused-expressions': 0,
     'no-param-reassign': 0,
-    'no-empty-function': 0
+    'no-empty-function': 0,
+    'no-trailing-spaces':0
   }
 };

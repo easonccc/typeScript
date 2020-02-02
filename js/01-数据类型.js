@@ -10,7 +10,7 @@ console.log(hh, oo, hex);
  * 2.字符串
  */
 var str1 = 'red';
-var str2 = '\u6A21\u677F\u5B57\u7B26\u4E32' + str1;
+var str2 = "\u6A21\u677F\u5B57\u7B26\u4E32" + str1;
 console.log(str1, str2);
 /* 3.布尔类型 */
 var isDone = true;
@@ -31,17 +31,17 @@ console.log(num1); /* null */
 /* 5.void类型
   表示没有任何类型，一般用在没有返回值的函数上面 */
 function fn() {
-  console.log('一个没有return的函数');
+    console.log('一个没有return的函数');
 }
 fn();
 /* 6.enum 枚举类型
   可以为一组没有意义的数值赋予友好的名字
   默认从零开始，也可以手动设置 */
 var Pes;
-(function(Pes) {
-  Pes[(Pes['one'] = 0)] = 'one';
-  Pes[(Pes['two'] = 3)] = 'two';
-  Pes[(Pes['three'] = 4)] = 'three';
+(function (Pes) {
+    Pes[Pes["one"] = 0] = "one";
+    Pes[Pes["two"] = 3] = "two";
+    Pes[Pes["three"] = 4] = "three";
 })(Pes || (Pes = {}));
 var p0 = Pes.one;
 var p2 = Pes.two;
@@ -57,10 +57,12 @@ var list1;
 list1 = [1, 2, 3];
 /* 3.数组泛型Array+<类型> 例如Array<number> */
 var list = [1, 2, 3];
-/* 4.接口表示数组，利用索引签名 */
+var list2 = [5, 6, 7];
+console.log(list2);
 /* 7.1元组
   1.元组是为了合并不同类型的对象，而元组Tuple合并了不同类型的对象 */
 var listx = [1, 'hh'];
+// let listtest: [number, string] = [2, '测试', '3', 'hhah']; 这种情况会直接报错
 /* 8.Any类型
   1.any类型是十分有用的，它允许你在编译时可以选择地包含或移除类型检查
   2.有时想在编程阶段还不清楚类型的变量指定一个类型，例如用户输入或者ajax或者第三方库；这种情况下，我们不希望类型检查器对这些值进行检查而是直接让他们通过编阶段的检查。这时就可以使用any类型标记这些变量。
@@ -68,6 +70,7 @@ var listx = [1, 'hh'];
 var notSure = 4;
 notSure = 'maybe a string';
 notSure = false;
+console.log("\u8FD9\u662Fany\u6D4B\u8BD5" + notSure); /* false */
 /* 9.Object类型
   object类型的变量只是允许你给它赋任意值，但是却不能够在它上面调用任意方法，即使他真的有这些方法 */
 var ob = 7.77;

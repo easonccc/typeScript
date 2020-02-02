@@ -63,10 +63,16 @@ list1 = [1, 2, 3];
 /* 3.数组泛型Array+<类型> 例如Array<number> */
 let list: Array<number> = [1, 2, 3];
 /* 4.接口表示数组，利用索引签名 */
+interface selfArray {
+  [index: number]: number;
+}
+let list2: selfArray = [5, 6, 7];
+console.log(list2);
 
 /* 7.1元组
   1.元组是为了合并不同类型的对象，而元组Tuple合并了不同类型的对象 */
 let listx: [number, string] = [1, 'hh'];
+// let listtest: [number, string] = [2, '测试', '3', 'hhah']; 这种情况会直接报错
 
 /* 8.Any类型
   1.any类型是十分有用的，它允许你在编译时可以选择地包含或移除类型检查
@@ -75,6 +81,7 @@ let listx: [number, string] = [1, 'hh'];
 let notSure: any = 4;
 notSure = 'maybe a string';
 notSure = false;
+console.log(`这是any测试${notSure}`); /* false */ 
 
 /* 9.Object类型
   object类型的变量只是允许你给它赋任意值，但是却不能够在它上面调用任意方法，即使他真的有这些方法 */
